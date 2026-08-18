@@ -106,10 +106,9 @@ export const Navbar = () => {
               h-[2px] w-5
               bg-emerald-400
               transition-all duration-300
-              ${
-                menuAbierto
-                  ? "translate-y-[7px] rotate-45"
-                  : ""
+              ${menuAbierto
+                ? "translate-y-[7px] rotate-45"
+                : ""
               }
             `}
           />
@@ -130,10 +129,9 @@ export const Navbar = () => {
               h-[2px] w-5
               bg-emerald-400
               transition-all duration-300
-              ${
-                menuAbierto
-                  ? "-translate-y-[7px] -rotate-45"
-                  : ""
+              ${menuAbierto
+                ? "-translate-y-[7px] -rotate-45"
+                : ""
               }
             `}
           />
@@ -242,21 +240,22 @@ export const Navbar = () => {
 
               {/* Descargar CV Mobile */}
               <a
-                href="/assets/cv-agustin-quinteros.pdf"
+                href="/cv backend developer quinteros agustin.pdf"
                 download="CV-Agustin-Quinteros.pdf"
                 onClick={cerrarMenu}
                 className="
-                  rounded-xl
-                  bg-emerald-500
-                  px-4 py-3
-                  text-center
-                  font-semibold
-                  text-white
-                  shadow-lg
-                  shadow-emerald-500/20
-                  transition-colors
-                  hover:bg-emerald-400
-                "
+                 rounded-xl
+                bg-emerald-500
+                 px-4
+                 py-3
+                 text-center
+                 font-semibold
+                 text-white
+                    shadow-lg
+    shadow-emerald-500/20
+    transition-colors
+    hover:bg-emerald-400
+  "
               >
                 Descargar CV
               </a>

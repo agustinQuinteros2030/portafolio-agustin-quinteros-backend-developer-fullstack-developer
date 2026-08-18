@@ -1,9 +1,11 @@
 import { useState } from "react";
 
-export const Navbar = () => {
-  const [menuAbierto, setMenuAbierto] = useState(false);
+const CV_PATH = "/cv-agustin-quinteros.pdf.pdf";
 
-  const cerrarMenu = () => {
+export const Navbar = () => {
+  const [menuAbierto, setMenuAbierto] = useState<boolean>(false);
+
+  const cerrarMenu = (): void => {
     setMenuAbierto(false);
   };
 
@@ -25,6 +27,7 @@ export const Navbar = () => {
         {/* ========================= */}
 
         <div className="hidden items-center gap-8 lg:flex">
+
           <a
             href="#inicio"
             className="text-sm font-medium text-gray-300 transition-colors hover:text-emerald-400"
@@ -60,25 +63,29 @@ export const Navbar = () => {
             Contacto
           </a>
 
-          {/* Descargar CV */}
+          {/* Descargar CV Desktop */}
           <a
-            href="/assets/cv-agustin-quinteros.pdf"
+            href={CV_PATH}
             download="CV-Agustin-Quinteros.pdf"
             className="
               rounded-xl
               bg-emerald-500
-              px-4 py-2
-              text-sm font-semibold
+              px-4
+              py-2
+              text-sm
+              font-semibold
               text-white
               shadow-lg
               shadow-emerald-500/20
-              transition-all duration-300
+              transition-all
+              duration-300
               hover:-translate-y-0.5
               hover:bg-emerald-400
             "
           >
             Descargar CV
           </a>
+
         </div>
 
         {/* ========================= */}
@@ -91,24 +98,33 @@ export const Navbar = () => {
           aria-label="Abrir menú"
           aria-expanded={menuAbierto}
           className="
-            flex h-10 w-10
+            flex
+            h-10
+            w-10
             flex-col
-            items-center justify-center
+            items-center
+            justify-center
             gap-[5px]
             rounded-lg
-            border border-emerald-400/30
+            border
+            border-emerald-400/30
             lg:hidden
           "
         >
+
           {/* Línea 1 */}
           <span
             className={`
-              h-[2px] w-5
+              h-[2px]
+              w-5
               bg-emerald-400
-              transition-all duration-300
-              ${menuAbierto
-                ? "translate-y-[7px] rotate-45"
-                : ""
+              transition-all
+              duration-300
+
+              ${
+                menuAbierto
+                  ? "translate-y-[7px] rotate-45"
+                  : ""
               }
             `}
           />
@@ -116,25 +132,37 @@ export const Navbar = () => {
           {/* Línea 2 */}
           <span
             className={`
-              h-[2px] w-5
+              h-[2px]
+              w-5
               bg-emerald-400
-              transition-all duration-300
-              ${menuAbierto ? "opacity-0" : ""}
+              transition-all
+              duration-300
+
+              ${
+                menuAbierto
+                  ? "opacity-0"
+                  : ""
+              }
             `}
           />
 
           {/* Línea 3 */}
           <span
             className={`
-              h-[2px] w-5
+              h-[2px]
+              w-5
               bg-emerald-400
-              transition-all duration-300
-              ${menuAbierto
-                ? "-translate-y-[7px] -rotate-45"
-                : ""
+              transition-all
+              duration-300
+
+              ${
+                menuAbierto
+                  ? "-translate-y-[7px] -rotate-45"
+                  : ""
               }
             `}
           />
+
         </button>
 
         {/* ========================= */}
@@ -145,11 +173,14 @@ export const Navbar = () => {
           <div
             className="
               absolute
-              left-0 top-full
+              left-0
+              top-full
               w-full
-              border-b border-white/10
+              border-b
+              border-white/10
               bg-[#07110f]
-              px-6 py-6
+              px-6
+              py-6
               shadow-2xl
               lg:hidden
             "
@@ -161,7 +192,8 @@ export const Navbar = () => {
                 onClick={cerrarMenu}
                 className="
                   rounded-lg
-                  px-4 py-3
+                  px-4
+                  py-3
                   font-medium
                   text-gray-300
                   transition-colors
@@ -177,7 +209,8 @@ export const Navbar = () => {
                 onClick={cerrarMenu}
                 className="
                   rounded-lg
-                  px-4 py-3
+                  px-4
+                  py-3
                   font-medium
                   text-gray-300
                   transition-colors
@@ -193,7 +226,8 @@ export const Navbar = () => {
                 onClick={cerrarMenu}
                 className="
                   rounded-lg
-                  px-4 py-3
+                  px-4
+                  py-3
                   font-medium
                   text-gray-300
                   transition-colors
@@ -209,7 +243,8 @@ export const Navbar = () => {
                 onClick={cerrarMenu}
                 className="
                   rounded-lg
-                  px-4 py-3
+                  px-4
+                  py-3
                   font-medium
                   text-gray-300
                   transition-colors
@@ -225,7 +260,8 @@ export const Navbar = () => {
                 onClick={cerrarMenu}
                 className="
                   rounded-lg
-                  px-4 py-3
+                  px-4
+                  py-3
                   font-medium
                   text-gray-300
                   transition-colors
@@ -240,22 +276,22 @@ export const Navbar = () => {
 
               {/* Descargar CV Mobile */}
               <a
-                href="/cv backend developer quinteros agustin.pdf"
+                href={CV_PATH}
                 download="CV-Agustin-Quinteros.pdf"
                 onClick={cerrarMenu}
                 className="
-                 rounded-xl
-                bg-emerald-500
-                 px-4
-                 py-3
-                 text-center
-                 font-semibold
-                 text-white
-                    shadow-lg
-    shadow-emerald-500/20
-    transition-colors
-    hover:bg-emerald-400
-  "
+                  rounded-xl
+                  bg-emerald-500
+                  px-4
+                  py-3
+                  text-center
+                  font-semibold
+                  text-white
+                  shadow-lg
+                  shadow-emerald-500/20
+                  transition-colors
+                  hover:bg-emerald-400
+                "
               >
                 Descargar CV
               </a>
